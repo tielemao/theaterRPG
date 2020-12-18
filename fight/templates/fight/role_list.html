@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}道非道角色列表{% endblock %}
+{% block content %}
+    <h1>角色列表</h1>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <td>头像</td>
+                    <td>名字</td>
+                    <td>生命</td>
+                    <td>真气</td>
+                    <td>波段上限</td>
+                    <td>波段下限</td>
+                    <td>功力</td>
+                    <td>外功</td>
+                    <td>内功</td>
+                    <td>轻功</td>
+                    <td>说明</td>
+                    <td>回避率</td>
+                    <td>会心率</td>
+                    <td>防御_减伤</td>
+
+                </tr>
+                {% for role in roles %}
+                    <tr>
+                        <td><img src="/media/{{ role.avatar }}" ></td>
+                        <td>{{ role.name }}</td>
+                        <td>{{ role.hp }}</td>
+                        <td>{{ role.mp }}</td>
+                        <td>{{ role.bandup }}</td>
+                        <td>{{ role.banddown }}</td>
+                        <td>{{ role.atk }}</td>
+                        <td>{{ role.str }}</td>
+                        <td>{{ role.mgk }}</td>
+                        <td>{{ role.agi }}</td>
+                        <td>{{ role.text }}</td>
+                        <td>{{ role.avd }}</td>
+                        <td>{{ role.dex }}</td>
+                        <td>{{ role.defense }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
